@@ -1,0 +1,95 @@
+.btn {
+    display: inline-block;
+    padding: 0 11px;
+    transition: 0.3s ease;
+    &-cnt {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 14px;
+        text-align: center;
+        color: $green;
+        transition: 0.3s ease;
+        @media (max-width: 992px)  {
+            min-height: 35px;
+        }
+        & svg {
+            & path {
+                fill: $green;
+                transition: 0.3s ease;
+            }
+        }
+    }
+    &.btn-174 {
+        width: 100%;
+        max-width: 174px;
+        min-width: 174px;
+        @media (max-width: 992px)  {
+            max-width: 136px;
+            min-width: 136px;
+        }
+    }
+    &-border {
+        border: 1px solid $green;
+        & .btn-cnt {
+            min-height: 38px;
+            @media (max-width: 992px)  {
+                min-height: 33px;
+            }
+        }
+        &:hover {
+            @media (min-width: 1201px) {
+                background-color: $green;
+                & .btn-cnt {
+                    color: $white;
+                    & svg {
+                        & path {
+                            fill: $white;
+                        }
+                    }
+                }
+            }
+        }
+        &-white {
+            border: 1px solid $white;
+            background-color: transparent;
+            & .btn-cnt {
+                color: $white;
+            }
+            &:hover {
+                @media (min-width: 1201px) {
+                    background-color: $green;
+                    & .btn-cnt {
+                        color: $white;
+                        & svg {
+                            & path {
+                                fill: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-main {
+        background: $green;
+        & .btn-cnt {
+            color: $white;
+            & svg {
+                & path {
+                    fill: $white;
+                }
+            }
+        }
+        &:hover {
+            @media (min-width: 1201px) {
+                background-color: $greendark;
+            }
+        }
+    }
+}

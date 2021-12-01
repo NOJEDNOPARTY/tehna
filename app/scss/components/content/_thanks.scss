@@ -1,0 +1,82 @@
+.thanks {
+    background-image: 
+        url('../images/tr-2.png'), url('../images/t-bg.png'), url('../images/t-bg2.png');
+    background-size: 
+        1920px 110px, 1920px 284px, 195px 532px;
+    background-repeat: 
+        no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 
+        bottom left, top -133px left, top 72px right;
+    @media (max-width: 1400px) {
+        background-image: 
+        url('../images/tr-2.png');
+        background-size: 
+            1920px 70px;
+        background-repeat: 
+            no-repeat, no-repeat;
+        background-position: 
+            bottom left, top -20px left;
+    }
+    &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 117px 0 143px;
+        @media (max-width: 1400px)  {
+            padding: 50px 0;
+        }
+        @media (max-width: 992px) {
+            padding: 35px 0;
+        }
+        & h1 {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 34px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #6EB44A;
+            @media (max-width: 992px) {
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+        & p {
+            margin-bottom: 15px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 32px;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.58);
+            @media (max-width: 992px)  {
+                font-size: 14px;
+                line-height: 32px;
+            }
+        }
+        & .btn{
+            display: block;
+            width: 100%;
+            max-width: 174px;
+            margin: 0 auto;
+        }
+    }
+    &-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 119px;
+        margin: 0 auto 33px;
+        @media (max-width: 992px)  {
+            max-width: 70px;
+            margin: 0 auto 20px;
+        }
+        & img {
+            max-width: 100%;
+        }
+    }
+}
