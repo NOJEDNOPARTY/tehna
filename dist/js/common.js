@@ -7,6 +7,8 @@ let common = {
 	},
 	navigation: function(){
 
+		// header navigation functionality
+
 		
 		function headerFixing() {
 			if($('.header').hasClass('header-simple')){
@@ -25,6 +27,8 @@ let common = {
 		$( window ).resize(function() {
 			headerFixing();
 		});
+
+
 
 		$('.header-nav-trigger').click(function(e){
 			if($(window).width() < 1201 && $(window).width() > 767) {
@@ -68,6 +72,15 @@ let common = {
 			$('body').toggleClass('hidden');
 			menuStatusCheck();
 		});
+
+		// filter trigger
+		$('.filter-trigger').click(function(event){
+			event.preventDefault();
+			if($(window).width() < 993) {
+				$(this).closest('.filter').toggleClass('open');
+				$(this).closest('.filter').find('form').slideToggle('fast');
+			}
+		});
 		
 
 
@@ -98,10 +111,8 @@ let common = {
 			event.preventDefault();
 			if(!$('.search-popup').hasClass('open') && !$('.popup-wrapper').hasClass('active')){
 				$('.search-popup').addClass('open');
-				$('body').addClass('hidden');
 			}else {
 				$('.search-popup').removeClass('open');
-				$('body').removeClass('hidden');
 			}
 		});
 
@@ -196,12 +207,32 @@ let common = {
 		});
 
 		// phone mask
-		$('.tel-trigger').mask("+7(999) 999-99-99");
+		$('.tel-trigger').mask("+380(99) 999-99-99");
 
 		
 
 	},
 	carousel: function(){
+
+		let articleSlider = $('.article-page-slider');
+
+		articleSlider.owlCarousel({
+			loop:true,
+			items: 2,
+			margin: 30,
+			nav: true,
+			dots: false,
+			responsive:{
+				0:{
+					items:1,
+					margin: 0
+				},
+				601:{
+					items:2
+				},
+			}
+		});
+
 		let bannerBenefits = $('.banner-benefits');
 		bannerBenefits.owlCarousel({
 			loop:true,

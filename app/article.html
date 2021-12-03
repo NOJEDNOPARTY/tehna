@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Заголовок одной новости длинной в две строчки</title>
+	//= template/content/common/head.html
+</head>
+
+<body>
+    <div class="main">
+        <div class="main-content">
+            //= template/content/common/header-simple.html
+            <div class="section-bg">
+                <div class="breadcrumbs">
+                    <div class="wrapper">
+                        <a href="index.html">
+                            <img src="./images/llll.svg" alt="ss">
+                            Главная
+                        </a>
+                        <span class="slash">|</span>
+                        <a href="news.html">
+                            Новости и Блог
+                        </a>
+                        <span class="slash">|</span>
+                        <span class="active">Новость 1</span>
+                    </div>
+                </div>
+                <div class="section-bg-cnt">
+                    //= template/content/includes/news/article.html
+                </div>
+            </div>
+        </div>
+        //= template/content/common/footer.html
+    </div>
+    //= template/content/common/popups.html
+    //= template/content/common/scripts.html
+</body>
+</html>
