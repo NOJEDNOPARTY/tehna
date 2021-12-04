@@ -10,12 +10,35 @@
         background-repeat: no-repeat;
         background-position: top center;
         background-size: cover;
+        background-color: #F5F5F5;
+        box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.13);
         @media (max-width: 992px) {   
             display: flex;
             align-items: stretch;
             justify-content: space-between;
             flex-flow: row wrap;                 
             padding: 10px;
+        }
+        &-title {
+            width: 100%;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 32px;
+            color: #000000;
+            @media (max-width: 992px) {
+                width: 100%;
+                font-size: 18px;
+                line-height: 28px;
+            }
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+            &:not(:first-child) {
+                padding-top: 13px;
+                border-top: 1px solid #E6E6E6;
+            }
         }
     }
 }
@@ -29,7 +52,7 @@
         width: calc(50% - 10px); 
         padding: 10px 10px 10px 10px;
     }
-    @media (max-width: 992px) {
+    @media (max-width: 640px) {
         width: 100%;
     }
     & * {
@@ -65,8 +88,6 @@
             margin-right: 5px;
         }
         & .news-blog-item-person {
-            width: 100%;
-            max-width: 51px;
             transform: none;
         }
     }
@@ -79,6 +100,7 @@
         font-size: 19px;
         line-height: 23px;
         color: #000000;
+        transition: 0.3s ease;
         @media (max-width: 992px)  {
             font-size: 16px;
             line-height: 20px;
@@ -86,6 +108,12 @@
         @media (max-width: 767px) {
             font-size: 14px;
             line-height: 18px;
+        }
+        &:hover {
+            color: #000;
+            @media (min-width: 1201px) {
+                color: $green;
+            }
         }
     }
     &-date {
@@ -133,6 +161,107 @@
             transform: translate(2px, 4px);
             & img {
                 width: 23px;
+            }
+        }
+    }
+    &-article {
+        &-img {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin-bottom: 16px;
+            max-height: 112px;
+            &::before {
+                content: "";
+                display: block;
+                padding-top: 69%;
+            }
+            & img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100% !important;
+                height: 100%;
+                object-fit: cover;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 2;
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: rgba(110, 180, 74, 0.3);
+                transition: 0.3s ease;
+                opacity: 0;
+                visibility: hidden;
+            }
+            &:hover:after {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        &-date {
+            margin-bottom: 2px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 19px;
+            color: #6EB44A;
+        }
+        &-title {
+            position: relative;
+            display: block;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 19px;
+            line-height: 32px;
+            color: #000000;
+            transition: 0.3s ease;
+            @media (max-width: 1400px) {
+                line-height: 26px;
+            }
+            @media (max-width: 992px) {
+                font-size: 17.3182px;
+                line-height: 29px;
+            }
+            @media (max-width: 500px)  {
+                font-size: 13px;
+                line-height: 22px;
+            }
+            &:hover {
+                color: #000;
+                @media (min-width: 1201px) {
+                    color: $green;
+                }
+            }
+            & > span {
+                position: relative;
+                display: inline-block;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 7px;
+                    right: -19px;
+                    display: block;
+                    width: 85%;                    
+                    height: 6px;
+                    background-color: $green;
+                    @media (max-width: 1400px) {
+                        bottom: 4px;
+                        right: -10px;
+                    }
+                }
+                & span {
+                    position: relative;
+                    z-index: 2;
+                }
             }
         }
     }

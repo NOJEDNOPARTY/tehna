@@ -319,6 +319,20 @@ html, body {
     }
 }
 
+.title-m {
+    margin-bottom: 14px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    @media (max-width: 767px) {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
 .paragraph {
     font-family: 'Inter';
     font-style: normal;

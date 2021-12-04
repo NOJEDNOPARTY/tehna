@@ -779,11 +779,25 @@
                 flex-direction: column;
                 align-items: center;
             }
+            & .experts {
+                width: 100%;
+                max-width: 367px;
+                @media (max-width: 992px) {          
+                    max-width: 100%;
+                }
+                &-cnt {
+                    padding: 14px 24px 22px;
+                    @media (max-width: 992px) {                 
+                        padding: 10px;
+                    }
+                }
+            }
         }
         &-cnt {
             width: 100%;
             max-width: 750px;
             @media (max-width: 992px) {
+                margin-bottom: 30px;
                 max-width: 100%;
             }
             & .info-block {
