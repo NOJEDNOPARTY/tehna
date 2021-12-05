@@ -382,4 +382,48 @@
             }
         }
     }
+    &-block-f {
+        & .banner-content {
+            padding: 143px 0 208px;
+            max-width: 100%;
+            & p {
+                max-width: 100%;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 22px;
+                color: #FFFFFF;
+                &:not(:last-child) {
+                    margin-bottom: 22px;
+                    @media (max-width: 767px) {
+                        margin-bottom: 17px;
+                    }
+                }
+                @media (max-width: 767px) {
+                    font-size: 12px;
+                    line-height: 17px;
+                }
+                & b {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    &-fixed {
+        position: absolute;
+        top: calc(100% - 171px);
+        left: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 29px;
+        max-width: 965px;
+        @media (max-width: 767px) {
+            position: static;
+            padding: 15px;
+            order: 2;
+            margin-top: 15px;
+        }
+    }
 }
