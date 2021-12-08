@@ -100,6 +100,33 @@
             flex-flow: row wrap;
         }
     }
+    &-gal {
+        & .solution-layout {
+            @media (min-width: 1401px) {
+                padding: 66px 0;
+            }
+        }
+    }
+    &-gallery {
+        @media (max-width: 992px) {
+            max-width: 100%;
+        }
+        & .solution-slide {
+            width: 100%;
+            &-img {
+                position: relative;
+                display: block;
+                width: 100%;
+                min-height: 238px;
+                max-height: 238px;
+                margin-bottom: 0;
+                @media (max-width: 767px) {
+                    min-height: 170px;
+                    max-height: 170px;
+                }
+            }
+        }
+    }
     &-slide {
         display: flex;
         align-items: center;
@@ -214,6 +241,49 @@
                     line-height: 15px;
                 }
             }
+            &.text-initial {
+                height: 46px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                @media (max-width: 992px) {
+                    height: 30px;
+                }
+            }
+        }
+    }
+    &-production {
+        padding: 80px 0 144px;
+        @media (max-width: 992px) {
+            padding: 38px 0 23px;
+        }
+        @media (min-width: 993px) {
+            .production-item-title {
+                padding:33px 5px;
+            }
+        }
+    }
+    &-white {
+        background: none !important;
+        & .solution-layout {
+            padding: 0 0 100px;
+            background: none !important;
+            @media (max-width: 992px) {
+                padding: 0 0 23px;
+            }
+        }
+        & .title {
+            & b,
+            & span {
+                font-family: 'Inter';
+                font-weight: 600;
+            }
+        }
+        & .title,
+        & .solution-slide-title,
+        & .solution-slide-title span {
+            color: #2B2A2A;
         }
     }
 }

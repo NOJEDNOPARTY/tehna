@@ -117,6 +117,14 @@ html, body {
                 padding-bottom: 35px;
             }
         }
+        &-1 {
+            & .section-bg-cnt {
+                @media (min-width: 1401px) {
+                    padding-top: 93px;
+                    padding-bottom: 93px;
+                }
+            }
+        }
     }
     &-cnt {
         padding-top: 39px;
@@ -262,6 +270,10 @@ html, body {
     }
 }
 
+.text-initial {
+    text-transform: initial !important;
+}
+
 .title {
     margin-bottom: 60px;
     display: block;
@@ -376,6 +388,43 @@ html, body {
                 bottom: 1px;
                 right: -6px;
                 width: 66%;
+                height: 6px;
+            }
+        }
+        & span {
+            position: relative;
+            z-index: 2;
+        }
+    }
+}
+.title-sm {
+    margin-bottom: 17px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32px;
+    color: #000000;
+    @media (max-width: 767px) {
+        font-size: 16px;
+        line-height:  22px;
+    }
+    & > span {
+        position: relative;
+        display: inline-block;
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            right: -13px;
+            display: block;
+            width: 89%;
+            height: 8px;
+            background-color: $green;
+            @media (max-width: 767px) {
+                bottom: 2px;
+                right: -5px;
+                width: 70%;
                 height: 6px;
             }
         }
@@ -538,6 +587,49 @@ a.title {
         &.was-validate:invalid {
             border: 1px solid  red;
         }
+        &-textarea {
+            display: block;
+            width: 100%;
+            padding:11px 23px;
+            min-height: 116px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 17px;
+            color: #8a8a8a;
+            outline: none;
+            box-shadow: none;
+            border: none;
+            background: #FAFAFA;
+            border-radius: 0;
+            border: 1px solid #FAFAFA;
+            transition: 0.3s ease;
+            resize: none;
+    
+            @media (max-width: 767px) {
+                font-size: 12px;
+            }
+            &:hover,
+            &:focus {
+                border: 1px solid $green;
+            }
+            &::-webkit-input-placeholder {
+                color: #AFAFAF;
+            }
+            &::-moz-placeholder {
+                color: #AFAFAF;
+            }
+            &:-ms-input-placeholder { 
+                color: #AFAFAF;
+            }
+            &:-moz-placeholder {
+                color: #AFAFAF;
+            }
+            &.was-validate:invalid {
+                border: 1px solid  red;
+            }
+        }
     }
     &-checkbox {
         cursor: pointer;
@@ -586,6 +678,13 @@ a.title {
             line-height: 24px;
             color: #FFFFFF;
             transition: 0.3s ease;
+            & a {
+                transition: 0.3s ease;
+                text-decoration: underline;
+                &:hover {
+                    color: $green;
+                }
+            }
         }
         &-dark {
             & .form-checkbox-icon {

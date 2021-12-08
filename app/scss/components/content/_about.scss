@@ -90,6 +90,12 @@
             @media (max-width: 767px) {
                 margin-bottom: 20px;
             }
+            &.mb-30 {
+                margin-bottom: 20px;
+                @media (max-width: 767px) {
+                    margin-bottom: 20px;
+                }
+            }
             &-text {
                 width: 100%;
                 max-width: 520px;
@@ -236,6 +242,21 @@
                     height: 100%;
                     object-fit: cover;
                 }
+                &-no {
+                    &::before {
+                        position: absolute;
+                        z-index: 5;
+                        top: -12px;
+                        right: 34px;
+                        padding: 0 !important;
+                        width: 37px;
+                        height: 37px;
+                        background: $green;
+                        @media (max-width: 992px) {
+                            display: none;
+                        }
+                    }
+                }
                 &:not(:first-child) {
                     &::after {
                         content: '';
@@ -251,6 +272,15 @@
                         background-size: contain;
                         @media (max-width: 1400px) {
                             display: none;
+                        }
+                    }
+                }
+                & .project-video-wrap {
+                    padding: 0;
+                    margin: 0;
+                    & .project-video {
+                        &::before {
+                            padding-top: 66%;
                         }
                     }
                 }
@@ -323,11 +353,43 @@
                     }
                 }
             }
+            &-22 {
+                margin-bottom: 0;
+                & .about-info-row-image {
+                    &::before {
+                        padding-top: 64%;
+                    }
+                }
+                @media (min-width: 993px) {
+                    & .about-info-row-image {
+                        max-width: 502px;
+                    }
+                    & .about-info-row-text {
+                        max-width: 596px;
+                    }
+                }
+            }
             &-3 {
                 margin-bottom: 0;
                 @media (min-width: 993px) {
                     & .about-info-row-text {
                         max-width: 520px;
+                    }
+                }
+            }
+            &-4 {
+                & .about-info-row-image {
+                    &::before {
+                        padding-top: 113%;
+                    }
+                }
+                @media (min-width: 993px) {
+                    margin-bottom: 109px;
+                    & .about-info-row-image {
+                        max-width: 520px;
+                    }
+                    & .about-info-row-text {
+                        max-width: 600px;
                     }
                 }
             }

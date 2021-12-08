@@ -25,6 +25,15 @@
         }
     }
     &-block {
+        &:not(:last-child) {
+            margin-bottom: 28px;
+            @media (max-width: 992px) {
+                margin-bottom: 24px;
+            }
+            @media (max-width: 767px) {
+                margin-bottom: 20px;
+            }
+        }
         & p {
             font-family: 'Inter';
             font-style: normal;
@@ -126,6 +135,9 @@
         }
         &-row {
             width: 100%;
+            & h3 {
+                font-weight: 500 !important;
+            }
             &:not(:last-child) {
                 @media (max-width: 767px) {
                     margin-bottom: 20px;
@@ -169,6 +181,22 @@
                         background-position: center;
                         @media (max-width: 992px) {
                             display: none;
+                        }
+                    }
+                }
+            }
+            &-2 {
+                & div {
+                    &:first-child {
+                        @media (min-width: 993px)  {
+                            width: 100%;
+                            max-width: 586px;
+                        }
+                    }
+                    &:last-child {
+                        @media (min-width: 993px)  {
+                            width: 100%;
+                            max-width: 502px;
                         }
                     }
                 }
@@ -264,6 +292,30 @@
             @media (max-width: 767px) {
                 font-size: 18px;
                 line-height: 26px;
+            }
+            & > span {
+                position: relative;
+                display: inline-block;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 1px;
+                    right: -5px;
+                    display: block;
+                    width: 66%;
+                    height: 8px;
+                    background-color: $green;
+                    @media (max-width: 767px) {
+                        bottom: 5px;
+                        right: -6px;
+                        width: 66%;
+                        height: 6px;
+                    }
+                }
+                & span {
+                    position: relative;
+                    z-index: 2;
+                }
             }
         }
         & h4 {

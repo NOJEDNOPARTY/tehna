@@ -242,7 +242,7 @@ let common = {
 			dots: false
 		});
 
-		let solutionSlider = $('.solution-slider');
+		let solutionSlider = $('.solution-slider-js');
 		solutionSlider.owlCarousel({
 			loop:true,
 			items: 1,
@@ -257,6 +257,28 @@ let common = {
 				},
 				993:{
 					items:1
+				},
+			}
+		});
+
+		let solutionGallery = $('.solution-gallery-js');
+		solutionGallery.owlCarousel({
+			loop:true,
+			items: 3,
+			margin: 30,
+			nav: true,
+			dots: false,
+			responsive:{
+				0:{
+					items:1,
+					nav: false,
+					dots: true
+				},
+				550:{
+					items:2
+				},
+				768:{
+					items:3
 				},
 			}
 		});

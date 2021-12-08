@@ -112,7 +112,7 @@
         &:hover {
             color: #000;
             @media (min-width: 1201px) {
-                color: $green;
+                color:#6EB44A;
             }
         }
     }
@@ -238,7 +238,7 @@
             &:hover {
                 color: #000;
                 @media (min-width: 1201px) {
-                    color: $green;
+                    color: #6eb44a;
                 }
             }
             & > span {
@@ -252,7 +252,7 @@
                     display: block;
                     width: 85%;                    
                     height: 6px;
-                    background-color: $green;
+                    background-color: #6eb44a;
                     @media (max-width: 1400px) {
                         bottom: 4px;
                         right: -10px;
