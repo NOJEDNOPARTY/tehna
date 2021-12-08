@@ -253,7 +253,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            & p {
+            & p,
+            & a {
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;

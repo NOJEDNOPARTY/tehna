@@ -270,7 +270,7 @@
                     }
                 }
             }
-            & p {
+            &__title {
                 font-family: 'Inter';
                 font-style: normal;
                 font-weight: 600;
@@ -363,7 +363,7 @@
                         }
                     }
                 }
-                & p {
+                &__title {
                     font-size: 14px;
                     line-height: 17px;
                     @media (max-width: 767px) {
