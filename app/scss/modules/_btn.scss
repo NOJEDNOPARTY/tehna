@@ -95,5 +95,9 @@
                 background-color: $greendark;
             }
         }
+        &-white {
+            background: #fff;
+            & .btn-cnt {color: $green;}
+        }
     }
 }

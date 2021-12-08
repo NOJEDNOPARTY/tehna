@@ -126,6 +126,47 @@ html, body {
             }
         }
     }
+    &-4 {
+        background-image: 
+        url('../images/tr-1.png'),  url('../images/tr-3.png'), url('../images/tr-4.png');
+        background-size: 
+            1920px 110px, 364px 575px, 265px 532px;
+        background-repeat: 
+            no-repeat, no-repeat, no-repeat;
+        background-position: 
+            top left, top 401px left, top 383px right;
+        @media (max-width: 1400px) {
+            background-image: url('../images/tr-1.png'), url('../images/tr-2.png');
+            background-size: 100% 72px, 100% 72px;
+            background-repeat: no-repeat, no-repeat;
+            background-position: top left, bottom left;
+        }
+        @media (max-width: 767px) {
+            background-size: 100% 35px, 100% 35px;
+        }
+        & .section-bg-cnt {
+            padding-top: 93px;
+            padding-bottom: 44px;
+            @media (max-width: 1400px) {
+                padding-top: 40px;
+            }
+            @media (max-width: 992px) {
+                padding-top: 35px;
+            }
+            @media (max-width: 767px) {
+                padding-top: 35px;
+                padding-bottom: 35px;
+            }
+        }
+        &-1 {
+            & .section-bg-cnt {
+                @media (min-width: 1401px) {
+                    padding-top: 93px;
+                    padding-bottom: 93px;
+                }
+            }
+        }
+    }
     &-cnt {
         padding-top: 39px;
         padding-bottom: 158px;
