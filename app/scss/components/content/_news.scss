@@ -335,7 +335,7 @@
                 border: 1px solid rgba(0, 0, 0, 0.13);
                 box-shadow: none;
             } 
-            &:not(.3-el):nth-child(-n+2) {
+            &:not(.three-el):nth-child(-n+2) {
                 display: none;
                 @media (max-width: 500px) {
                     display: block;

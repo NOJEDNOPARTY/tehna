@@ -79,6 +79,27 @@
                 }
             }
         }
+        &-dark {
+            border: 1px solid #000000;
+            background-color: transparent;
+            & .btn-cnt {
+                color: #000000;
+            }
+            &:hover {
+                @media (min-width: 1201px) {
+                    border: 1px solid $green;
+                    background-color: $green;
+                    & .btn-cnt {
+                        color: $white;
+                        & svg {
+                            & path {
+                                fill: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     &-main {
         background: $green;

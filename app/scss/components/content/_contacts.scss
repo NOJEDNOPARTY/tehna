@@ -13,6 +13,99 @@
                 flex-direction: column;
                 align-items: center;
             }
+            &-big {
+                max-width: 100%;
+                & .contact-us-left {
+                    width: 100%;
+                    max-width: 377px;
+                    @media (max-width: 992px) {
+                        max-width: 100%;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    & .contact-us-img {
+                        max-height: 215px;
+                    }
+                    & .contact-us-element {
+                        @media (min-width: 993px) {
+                            width: 110px;
+                        }
+                        &.contact-us-element-100 {
+                            width: 100%;
+                            padding: 53px 0 9px;
+                            @media (max-width: 992px) {
+                                padding: 0;
+                            }
+                            & .btn {
+                                display: block;
+                                width: 100%;
+                                max-width: 244px;
+                                padding: 0 5px;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                    & .contact-us-elements {
+                        max-height: 315px;
+                        @media (max-width: 992px) {
+                            max-height: 209px;
+                        }
+                    }
+                }
+                & .contact-us-right {
+                    max-width: 100%;
+                    padding: 34px 34px 34px 55px;
+                    @media (max-width: 992px) {
+                        padding: 20px 15px;
+                    }
+                    & .title-sm {
+                        margin-bottom: 21px;
+                        @media (max-width: 992px) {
+                            margin-bottom: 14px;
+                        }
+                    }
+                    &-row {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-between;
+                        flex-flow: row wrap;
+                        @media (max-width: 992px) {
+                            flex-direction: column;
+                            align-items: center;
+                        }
+                        & .form-field-textarea {
+                            min-height: 99px;
+                        }
+                    }
+                    &-column {
+                        width: calc(50% - 10px);
+                        @media (max-width: 992px) {
+                            width: 100%;
+                        }
+                        &:not(:last-child) {
+                            margin-bottom: 30px;
+                            @media (max-width: 992px) {
+                                margin-bottom: 20px;
+                            }
+                        }
+                        & h4 {
+                            margin-bottom: 21px;
+                            font-family: 'Inter';
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 14px;
+                            line-height: 18px;
+                            color: #000000;
+                        }
+                    }
+                    &-col {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                    }
+                }
+            }
         }
         &-left {
             width: 100%;
@@ -29,7 +122,8 @@
             & form {
                 width: 100%;
                 & .form-field,
-                & .form-field-textarea {
+                & .form-field-textarea,
+                & .form-field-select {
                     width: 100%;
                     &:not(:last-child) {margin-bottom: 20px;}
                 }

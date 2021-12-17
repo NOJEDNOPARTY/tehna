@@ -1,0 +1,105 @@
+.drawing {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    &-item {
+        position: relative;
+        width: 100%;
+        max-width: 266px;
+        margin-bottom: 20px;
+        padding: 26px 35px 26px 26px;
+        background: #FFFFFF;
+        box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.13);
+        overflow: hidden;
+        @media (max-width: 767px) {
+            padding: 26px;
+            margin-bottom: 0;
+            max-width: 100%;
+        }
+        &:not(:last-child) {
+            margin-right: 36px;
+            @media (max-width: 767px) {
+                margin: 0 0 20px;
+            }
+        }
+        &-title {
+            position: relative;
+            display: block;
+            margin-bottom: 6px;
+            padding-left: 10px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 19px;
+            line-height: 32px;
+            color: #000000;
+            @media (max-width: 767px) {
+                font-size: 17px;
+                line-height: 32px;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: 14px;
+                left: 0%;
+                display: block;
+                width: 4px;
+                height: 4px;
+                margin-right: 6px;
+                background-color: $green;
+            }
+        }
+        &-text {
+            display: block;
+            margin-bottom: 19px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 24px;
+            color: #000000;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            display: block;
+            width: 100%;
+            max-width: 71px;
+            height: 71px;
+            background: #F9F9F9;
+            clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+        }
+        &-icon {
+            position: absolute;
+            bottom: 4px;
+            right: 12px;
+            display: block;
+            width: 21px;
+            & img {
+                max-width: 100%;
+            }
+        }
+        &-download {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 24px;
+            color: #000000;
+            @media (max-width: 767px) {
+                font-size: 16px;
+                line-height: 16px;
+            }
+            & img {
+                width: 29px;
+                margin-right: 8px;
+            }
+        }
+    }
+}

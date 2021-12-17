@@ -1,0 +1,92 @@
+.colors {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    &-row {
+        position: relative;
+        padding: 198px 443px 171px 0;
+        @media (max-width: 1400px) {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 40px 0;
+        }
+    }
+    &-content {
+        width: 100%;
+        max-width: 697px;
+        @media (max-width: 1400px) {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        & .title {
+            &:not(:last-child) {
+                margin-bottom: 29px;
+                @media (max-width: 992px) {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        & .info-block {
+            &:not(:last-child) {
+                margin-bottom: 25px;
+                @media (max-width: 992px) {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    &-img {
+        position: absolute;
+        left: calc(100% - 430px);
+        bottom: 14px;
+        @media (max-width: 1400px) {
+            position:static;
+            width: 100%;
+            max-width: 550px;
+            & img {
+                max-width: 100%;
+            }
+        }
+    }
+    &-list {
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-start;
+        flex-flow: row wrap;
+        & span {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 0 5px;
+            width: 100%;
+            max-width: 120px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 40px;
+            text-align: center;
+            color: #FFFFFF;
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+        &-1 {
+            background-color: #354439;
+        }
+        &-2 {
+            background-color: #383E42;
+        }
+        &-3 {
+            background-color: #1F255C;
+        }
+        &-4 {
+            background-color: #292C2F;
+        }
+        &-5 {
+            background-color: #E5C843;
+        }
+    }
+}
