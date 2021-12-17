@@ -85,6 +85,7 @@ let common = {
 	},
 	main: function(){
 		
+		window.CI360.init();
 		// link-select
 
 		$('.link-select .link-select-active').click(function(event){

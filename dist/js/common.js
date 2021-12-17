@@ -84,15 +84,8 @@ let common = {
 		
 	},
 	main: function(){
-
-		const rotation = document.querySelector('.rotation');
-
-		circlr(rotation)
-		.scroll(true)
-		.play()
-		.on('show', n => {});
-
 		
+		window.CI360.init();
 		// link-select
 
 		$('.link-select .link-select-active').click(function(event){

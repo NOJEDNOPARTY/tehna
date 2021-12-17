@@ -169,7 +169,7 @@
                                     <div class="header-nav-submenu-cat">
                                         <a class="header-nav-submenu-link" href="blueprints.html">Чертежи</a>
                                         <a class="header-nav-submenu-link" href="catalog.html">Наши каталоги</a>
-                                        <a class="header-nav-submenu-link" href="#">Конструктор ограждений ТЕХНА</a>
+                                        <a class="header-nav-submenu-link" href="construct.html">Конструктор ограждений ТЕХНА</a>
                                     </div>
                                 </div>
                             </div>
@@ -484,19 +484,17 @@
                                     <div class="card-info-item tab-cnt tab-cnt-3">
                                         <div class="model-3d">
                                             <div class="model-3d-logo"><img src="./images/4333.svg" alt="ss"></div>
-                                            <div class="model-3d-content rotation">
-                                                <img src="/images/panorama/classic 0001.png">
-                                                <img src="/images/panorama/classic 0002.png">
-                                                <img src="/images/panorama/classic 0003.png">
-                                                <img src="/images/panorama/classic 0004.png">
-                                                <img src="/images/panorama/classic 0005.png">
-                                                <img src="/images/panorama/classic 0006.png">
-                                                <img src="/images/panorama/classic 0007.png">
-                                                <img src="/images/panorama/classic 0008.png">
-                                                <img src="/images/panorama/classic 0009.png">
-                                                <img src="/images/panorama/classic 0010.png">
-                                                <img src="/images/panorama/classic 0011.png">
-                                            </div>
+                    
+                                            <div
+                                                class="cloudimage-360 model-3d-content"
+                                                data-folder="./images/panorama/"
+                                                data-filename="classic-({index}).png"
+                                                data-amount="300"
+                                                data-autoplay="true"
+                                                data-speed="300"
+                                                data-hide-360-logo="true"
+                                            ></div>
+                    
                                             <div class="model-3d-rotate"><img src="./images/rotate.svg" alt="ss"></div>
                                             <div class="model-3d-arrow model-3d-arrow-left"><img src="./images/arrow-r-1.svg" alt="ss"></div>
                                             <div class="model-3d-arrow model-3d-arrow-right"><img src="./images/arrow-r-2.svg" alt="ss"></div>
@@ -731,13 +729,28 @@
         </div>
     </div>
     
+    <div id="conctructCallback" class="popup-wrapper active">
+        <div class="popup-layout">
+            <div class="popup">
+                <h3>Обратный <span><span>звонок</span></span></h3>
+                <form action="#">
+                    <input class="form-field" type="text"  required placeholder="Имя">
+                    <input class="form-field tel-trigger" type="tel"  required placeholder="Номер телефона">
+                    <input class="form-field" type="email" required placeholder="Е-mail">
+                    <button class="btn btn-main submit-btn"><span class="btn-cnt">Заказать звонок</span></button>
+                </form>
+                <div class="popup-close"><img src="./images/close-btn.svg" alt="close"></div>
+            </div>
+        </div>
+    </div>
+    
     <!--Libs-->
     <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/libs/3d/js-cloudimage-360-view.min.js"></script>
     <script src="js/libs/jquery.maskedinput.min.js"></script>
     <script src="js/libs/owlcarousel/owl.carousel.min.js"></script>
     <script src="js/libs/fancybox/jquery.fancybox.min.js"></script>
     <script src="js/libs/blazy/blazy.min.js"></script>
-    <script src="js/libs/3d/jquery.reel.js"></script>
     <script src="js/libs/wow.min.js"></script>
     
     <!--general-->
