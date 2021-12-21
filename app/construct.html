@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Конструктор ограждений</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 	//= template/content/common/head.html
 </head>
 
@@ -34,6 +35,201 @@
         //= template/content/common/footer.html
     </div>
     //= template/content/common/popups.html
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcNzPDwwAqZ2hEtEaaqKwyTO2JoKUaYHE&callback=initMap&libraries=geometry"
+      async>
+    </script>
+    <script>
+        let poly; 
+        let map;
+        let infoWindow;
+        let coords = [];
+        let markers = [];
+        let lastMarker = markers[markers.length - 1] || undefined;
+
+        function initMap() {
+            google.maps.Marker.prototype.selected = false;
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 7,
+                center: { lat: 51.412331418881664, lng: 30.800283329680934 }, 
+                disableDefaultUI: true,
+                mapTypeId: google.maps.MapTypeId.HYBRID
+            });
+
+            // find your current location
+            infoWindow = new google.maps.InfoWindow();
+            const locationButton = document.createElement("button");
+            locationButton.classList.add("custom-map-control-button");
+            map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+            locationButton.addEventListener("click", () => {
+                // Try HTML5 geolocation.
+                if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude,
+                        };
+
+                        infoWindow.setPosition(pos);
+                        infoWindow.setContent("Ваша локация!");
+                        infoWindow.open(map);
+                        map.setCenter(pos);
+                    },
+                    () => {
+                        handleLocationError(true, infoWindow, map.getCenter());
+                    }
+                );
+                } else {
+                    handleLocationError(false, infoWindow, map.getCenter());
+                }
+            });
+
+            // Polyline
+            poly = new google.maps.Polyline({
+                strokeColor: "#6EB44A",
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+
+            poly.setMap(map);
+            map.addListener("click", addMarker);
+        }
+        
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(
+                browserHasGeolocation
+                ? "Помилка"
+                : "Помилка, браузер не підтримує геолокацію"
+            );
+            infoWindow.open(map);
+        }
+        
+        function toggleMapControl() {
+            if(markers.length > 0) {
+                document.querySelector('#mapControl').classList.add('active');
+            }else {
+                document.querySelector('#mapControl').classList.remove('active');
+            }
+        }
+        
+        function addMarker(event) {
+            const path = poly.getPath();
+            path.push(event.latLng);
+
+            var marker = new google.maps.Marker({
+                position: event.latLng,
+                title: '' + path.getLength(),
+                map: map,
+                icon: './images/marker.png',
+                draggable: true
+            });
+
+            marker.addListener('dragend',function(event) {
+                let markerCurrent = this;
+                let currentTitle = markerCurrent.title;
+                let newIndex;
+                markers.forEach((el, index) => {
+                    if(el.title == currentTitle){
+                        return newIndex = index;
+                    }
+                    return;
+                });
+                changeMarkerPosition(newIndex, markerCurrent);
+                updating();
+            });
+
+            marker.addListener('rightclick',function(event) {
+                let markerCurrent = this;
+                let currentTitle = markerCurrent.title;
+                let newIndex;
+                markers.forEach((el, index) => {
+                    if(el.title == currentTitle){
+                        return newIndex = index;
+                    }
+                    return;
+                });
+                removeMarker(newIndex);
+                updating();
+            });
+
+            markers.push(marker);
+
+            if(markers.length > 1) {
+                updating();
+            }
+
+            lastMarker = markers[markers.length - 1];
+        }
+
+        function removeAllMarkers(e){
+            poly.setMap(null);
+            initMap();
+            markers = [];
+            updating();
+        }
+
+        function removeLastMarker(e){
+            poly.getPath().pop();
+            markers.pop();
+            lastMarker.setMap(null);
+            lastMarker = markers[markers.length - 1];
+            updating();
+        }
+
+        function changeMarkerPosition(index, data){
+            let markerElement = markers[index];
+            markerElement.position = data.position;  
+            poly.getPath().sd[index] = data.position;  
+            poly.setPath(poly.getPath());    
+            updating();        
+        }
+        
+        function removeMarker(index){
+            markers[index].setMap(null);
+            markers.splice(index, 1);
+            poly.getPath().sd.splice(index, 1);
+            poly.setPath(poly.getPath());  
+            updating();
+        }
+
+        function getDictance() {
+            let lengthInMeters = google.maps.geometry.spherical.computeLength(poly.getPath());
+            let dictance = lengthInMeters.toFixed(0);
+            return dictance;
+            updating();
+        }
+
+        function updating() {
+            let pillarsLength = document.querySelector('.construct-length');
+            let pillarsMessage = document.querySelector('.construct-long');
+            let pillarsInput = document.querySelector('.construct-pillars');
+            let distance = getDictance();
+            let pillarsCount = document.querySelector('.between-value').value;
+            pillarsLength.innerHTML = distance;
+            pillarsInput.innerHTML= Math.ceil(distance / pillarsCount);
+            toggleMapControl();
+
+            let message = '';
+
+            markers.forEach((el, index) => {
+                message += `{#${index + 1}: LAT(${el.position.lat()}), LNG(${el.position.lng()})} `;
+            })
+
+            pillarsMessage.innerHTML = message;
+            console.log(pillarsMessage.innerHTML)
+        }
+        
+        document.getElementById('removeAllMarkers').addEventListener('click', removeAllMarkers)
+        document.getElementById('removeLastMarker').addEventListener('click', removeLastMarker)
+        document.getElementById('betweenValue').addEventListener('change', updating)
+
+
+
+
+    </script>
     //= template/content/common/scripts.html
 </body>
 </html>

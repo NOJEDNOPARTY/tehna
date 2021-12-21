@@ -1,5 +1,200 @@
 <div class="about-page">
     <div class="wrapper">
-        
+        <div class="construct-benefits">
+            <div class="construct-benefits-item">
+                <h3><span>Шаг 1:</span> Выберите участок</h3>
+                <p>Найдите на карте участок, на котором планируете разместить ограждение. Выберите удобный для нанесения ограждения масштаб карты.</p>
+            </div>
+            <div class="construct-benefits-item">
+                <h3><span>Шаг 2:</span> Обозначьте ваше ограждение</h3>
+                <p>Обозначьте на карте ваше ограждение с помощью левой кнопки мышки, либо пальцем, если вы используете планшет или смартфон.</p>
+                <p>*Для коррекции нанесенных параметров есть кнопки <b>отменить последнее действие и сбросить все отметки.</b></p>
+            </div>
+            <div class="construct-benefits-item">
+                <h3><span>Шаг 3:</span> Укажите расстояние между столбами</h3>
+                <p>Когда вы соединили линию забора, укажите среднее расстояние между столбами и необходимое вам количество ворот и калиток. Выберите тип системы ограждений из выпадающего списка.</p>
+                <p>*Также можно выбрать дополнительные системы безопасности и контроля доступа, которые вы хотели бы разместить по периметру ограждения.</p>
+            </div>
+            <div class="construct-benefits-item">
+                <h3><span>Шаг 4:</span> Введите данные в форму</h3>
+                <p>Нажмите кнопку <b>далее</b> и введите в форму просчета ваши контактные данные для связи. Нажмите кнопку <b>отправить запрос</b>.</p>
+            </div>
+        </div>
+        <div class="info-block">
+            <p><b>Наши менеджеры свяжутся с вами в течение суток для уточнения параметров и просчета. Также на указанную вами почту придёт письмо с выбранными параметрами ограждения.</b></p>
+        </div>
+        <div class="construct-container">
+            <div class="construct-map">
+                <div class="construct-map-con">
+                    <div id="map" class="map-con"></div>
+                </div>
+                <div id="mapControl" class="map-control">
+                    <button id="removeLastMarker" class="btn btn-white">
+                        
+                        <span class="btn-cnt">
+                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.3639 4.43012H4.22344L4.84617 3.50473C4.92923 3.38232 4.97737 3.23958 4.98541 3.09187C4.99346 2.94415 4.96111 2.79703 4.89183 2.66632C4.82256 2.53561 4.71898 2.42624 4.59222 2.34996C4.46546 2.27369 4.32032 2.23339 4.17239 2.2334H4.17069C4.03762 2.23339 3.90626 2.26331 3.78632 2.32095C3.66639 2.37859 3.56095 2.46248 3.47783 2.56639L1.56188 4.96169C1.50159 5.03704 1.46875 5.13067 1.46875 5.22718C1.46875 5.32368 1.50159 5.41731 1.56188 5.49267L3.47804 7.88781C3.56116 7.99173 3.66659 8.07562 3.78653 8.13327C3.90646 8.19092 4.03783 8.22085 4.1709 8.22085H4.17239C4.32031 8.22085 4.46545 8.18055 4.59219 8.10428C4.71894 8.02801 4.82251 7.91864 4.89179 7.78794C4.96106 7.65724 4.99342 7.51013 4.98538 7.36242C4.97734 7.21471 4.92922 7.07199 4.84617 6.94957L4.22328 6.02387H10.3639C11.3118 6.02387 12.221 6.40044 12.8913 7.07074C13.5616 7.74104 13.9381 8.65017 13.9381 9.59812C13.9381 10.5461 13.5616 11.4552 12.8913 12.1255C12.221 12.7958 11.3118 13.1724 10.3639 13.1724H8.62591C8.41456 13.1724 8.21188 13.2563 8.06243 13.4058C7.91299 13.5552 7.82903 13.7579 7.82903 13.9692C7.82903 14.1806 7.91299 14.3833 8.06243 14.5327C8.21188 14.6822 8.41456 14.7661 8.62591 14.7661H10.3639C11.7345 14.7661 13.049 14.2216 14.0182 13.2524C14.9874 12.2833 15.5319 10.9688 15.5319 9.59812C15.5319 8.22748 14.9874 6.91298 14.0182 5.94379C13.049 4.9746 11.7345 4.43012 10.3639 4.43012Z" fill="#6EB44A"/>
+                            </svg>                            
+                            <span>Удалить последний маркер</span>
+                        </span>
+                    </button>
+                    <button id="removeAllMarkers" class="btn btn-white"><span class="btn-cnt">Сбросить все отметки</span></button>
+                </div>
+            </div>
+            <div class="construct-row">
+                <div class="construct-row-logo b-lazy" data-src="./images/bg-co.png">
+                    <img src="./images/logo-c.svg" alt="ss">
+                </div>
+                <div class="construct-form">
+                    <form action="#">
+                        <div class="construct-form-row">
+                            <div class="construct-form-column">
+                                <h3 class="title-sm"><span><span>Расчет</span></span></h3>
+                                <div class="construct-main">
+                                    <h4>Ваше ограждение</h4>
+                                    <div class="construct-main-row">
+                                        <p>Длина ограждения</p>
+                                        <div class="construct-main-info">
+                                            <span class="construct-length">0</span>
+                                            <span>м.</span>
+                                        </div>
+                                    </div>
+                                    <div class="construct-main-row">
+                                        <p>Количество столбов</p>
+                                        <div class="construct-main-info">
+                                            <span class="construct-pillars">0</span>
+                                            <span>шт.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <textarea class="construct-long" hidden></textarea>
+                                <label class="construct-field">
+                                    <span class="construct-field-title">Среднее расстояние между столбами</span>
+                                    <span class="construct-field-wrap">
+                                        <input type="text" id="betweenValue" class="construct-field-input between-value" value="12">
+                                        <span class="construct-field-type">м.</span>
+                                    </span>
+                                </label>
+                                <label class="construct-field">
+                                    <span class="construct-field-title">Тип ворот</span>
+                                    <span class="construct-field-wrap">
+                                        <input type="text" class="construct-field-input" value="2">
+                                        <span class="construct-field-type">шт.</span>
+                                    </span>
+                                </label>
+                                <label class="construct-field">
+                                    <span class="construct-field-title">Количество ворот</span>
+                                    <select class="form-field-select" name="type">
+                                        <option value="0" disabled selected>Распашные</option>
+                                        <option value="1">Распашные</option>
+                                        <option value="2">Распашные</option>
+                                        <option value="3">Распашные</option>
+                                    </select>
+                                </label>
+                                <label class="construct-field">
+                                    <span class="construct-field-title">Количество калиток</span>
+                                    <span class="construct-field-wrap">
+                                        <input type="text" class="construct-field-input between-value" value="0">
+                                        <span class="construct-field-type">шт.</span>
+                                    </span>
+                                </label>
+                                <label class="construct-field">
+                                    <span class="construct-field-title">Выбор типа ограждения</span>
+                                    <select class="form-field-select" name="type">
+                                        <option value="0" disabled selected>ТЕХНА-КЛАССИК</option>
+                                        <option value="1">ТЕХНА-КЛАССИК</option>
+                                        <option value="2">ТЕХНА-КЛАССИК</option>
+                                        <option value="3">ТЕХНА-КЛАССИК</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="construct-form-column construct-form-column-2">
+                                <h4>Дополнительные системы безопасности и контроля доступа</h4>
+                                <label class="form-checkbox form-checkbox-dark">
+                                    <input type="checkbox">
+                                    <span class="form-checkbox-icon">
+                                        <img src="./images/check.svg" alt="check">
+                                    </span>
+                                    <span class="form-checkbox-text">Система охранной сигнализации периметра</span>
+                                </label>
+                                <label class="form-checkbox form-checkbox-dark">
+                                    <input type="checkbox">
+                                    <span class="form-checkbox-icon">
+                                        <img src="./images/check.svg" alt="check">
+                                    </span>
+                                    <span class="form-checkbox-text">Система видеонаблюдения периметра</span>
+                                </label>
+                                <label class="form-checkbox form-checkbox-dark">
+                                    <input type="checkbox">
+                                    <span class="form-checkbox-icon">
+                                        <img src="./images/check.svg" alt="check">
+                                    </span>
+                                    <span class="form-checkbox-text">Система видеонаблюдения за территорией</span>
+                                </label>
+                                <label class="form-checkbox form-checkbox-dark">
+                                    <input type="checkbox">
+                                    <span class="form-checkbox-icon">
+                                        <img src="./images/check.svg" alt="check">
+                                    </span>
+                                    <span class="form-checkbox-text">Система охранной сигнализации помещений</span>
+                                </label>
+                                <label class="form-checkbox form-checkbox-dark">
+                                    <input type="checkbox">
+                                    <span class="form-checkbox-icon">
+                                        <img src="./images/check.svg" alt="check">
+                                    </span>
+                                    <span class="form-checkbox-text">Система контроля доступа и управления рабочим временем</span>
+                                </label>
+                                <label class="form-checkbox form-checkbox-dark">
+                                    <input type="checkbox">
+                                    <span class="form-checkbox-icon">
+                                        <img src="./images/check.svg" alt="check">
+                                    </span>
+                                    <span class="form-checkbox-text">Система видеоконтроля производственных процессов</span>
+                                </label>
+                                <label class="form-checkbox form-checkbox-dark">
+                                    <input type="checkbox">
+                                    <span class="form-checkbox-icon">
+                                        <img src="./images/check.svg" alt="check">
+                                    </span>
+                                    <span class="form-checkbox-text">Система охранного и тревожного освещения</span>
+                                </label>
+                                <label class="form-checkbox form-checkbox-dark">
+                                    <input type="checkbox">
+                                    <span class="form-checkbox-icon">
+                                        <img src="./images/check.svg" alt="check">
+                                    </span>
+                                    <span class="form-checkbox-text">Система диспетчеризации лифтов</span>
+                                </label>
+                                <label class="form-checkbox form-checkbox-dark">
+                                    <input type="checkbox">
+                                    <span class="form-checkbox-icon">
+                                        <img src="./images/check.svg" alt="check">
+                                    </span>
+                                    <span class="form-checkbox-text">Система контроля перемещения автотранспорта</span>
+                                </label>
+                                <label class="form-checkbox form-checkbox-dark">
+                                    <input type="checkbox">
+                                    <span class="form-checkbox-icon">
+                                        <img src="./images/check.svg" alt="check">
+                                    </span>
+                                    <span class="form-checkbox-text">Интегрированная система безопасности</span>
+                                </label>
+                                <label class="form-checkbox form-checkbox-dark">
+                                    <input type="checkbox">
+                                    <span class="form-checkbox-icon">
+                                        <img src="./images/check.svg" alt="check">
+                                    </span>
+                                    <span class="form-checkbox-text">Спиральные барьеры безопасности (СББ)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="construct-form-button">
+                            <button class="btn btn-border submit-btn"><span class="btn-cnt">Далее</span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

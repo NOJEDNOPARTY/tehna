@@ -847,15 +847,59 @@
         </div>
     </div>
     
-    <div id="conctructCallback" class="popup-wrapper active">
+    <div id="conctructCallback" class="popup-wrapper">
         <div class="popup-layout">
-            <div class="popup">
-                <h3>Обратный <span><span>звонок</span></span></h3>
-                <form action="#">
-                    <input class="form-field" type="text"  required placeholder="Имя">
-                    <input class="form-field tel-trigger" type="tel"  required placeholder="Номер телефона">
-                    <input class="form-field" type="email" required placeholder="Е-mail">
-                    <button class="btn btn-main submit-btn"><span class="btn-cnt">Заказать звонок</span></button>
+            <div class="popup popup-construct">
+                <h3 class="text-center">Конструктор ограждений  <span><span>ТЕХНА</span></span></h3>
+                <p class="text-center">Контактная информация по проекту</p>
+                <form class="form-row-wrap" action="#">
+                    <div class="form-row">
+                        <input class="form-field" type="text"  required placeholder="Ваше имя">
+                        <input class="form-field" type="text"  required placeholder="Фамилия">
+                        <input class="form-field" type="email" required placeholder="Е-mail">
+                        <input class="form-field tel-trigger" type="tel"  required placeholder="Телефон*">
+                        <input class="form-field default" type="text"  required value="вулиця Короленківська, 3, Київ">
+                        <input class="form-field default" type="text"  required value="Украина">
+                        <div class="form-row-column">
+                            <select class="form-field-select" name="type">
+                                <option value="0" disabled selected>Тип объекта*</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <textarea class="form-field-textarea" placeholder="Комментарий"></textarea>
+                        </div>
+                        <div class="form-row-column">
+                            <div class="form-row-pad">
+                                <h4>Дополнительные пожелания</h4>
+                                <p>Выберите какую информацию вы хотели бы получать</p>
+                                <label class="form-checkbox form-checkbox-dark">
+                                    <input type="checkbox">
+                                    <span class="form-checkbox-icon">
+                                        <img src="./images/check.svg" alt="check">
+                                    </span>
+                                    <span class="form-checkbox-text">Новости компании</span>
+                                </label>
+                                <label class="form-checkbox form-checkbox-dark">
+                                    <input type="checkbox">
+                                    <span class="form-checkbox-icon">
+                                        <img src="./images/check.svg" alt="check">
+                                    </span>
+                                    <span class="form-checkbox-text">Специальные предложения и новинки</span>
+                                </label>
+                                <label class="form-checkbox form-checkbox-dark">
+                                    <input type="checkbox">
+                                    <span class="form-checkbox-icon">
+                                        <img src="./images/check.svg" alt="check">
+                                    </span>
+                                    <span class="form-checkbox-text">Каталоги и брошюры</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row-button">
+                        <button class="btn btn-main submit-btn"><span class="btn-cnt">Отправить</span></button>
+                    </div>
                 </form>
                 <div class="popup-close"><img src="./images/close-btn.svg" alt="close"></div>
             </div>

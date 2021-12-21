@@ -745,7 +745,7 @@ a.title {
             display: block;
             width: 100%;
             padding:11px 23px;
-            min-height: 116px;
+            min-height: 113px;
             font-family: 'Inter';
             font-style: normal;
             font-weight: 300;
@@ -783,6 +783,10 @@ a.title {
             &.was-validate:invalid {
                 border: 1px solid  red;
             }
+        }
+        &.default {
+            background: rgba(182, 182, 182, 0.06);
+            color: rgba(138, 138, 138, 0.55) !important;
         }
     }
     &-checkbox {
@@ -942,6 +946,7 @@ a.title {
     }
     &-field-select {
         display: block;
+        width: 100%;
         padding: 0 23px;
         font-family: 'Inter';
         font-style: normal;
@@ -992,6 +997,79 @@ a.title {
             border: 1px solid  red;
         }
         
+    }
+    &-row {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        @media (max-width: 767px) {
+            flex-direction: column;
+            align-items: center;
+        }
+        &-column,
+        & .form-field {
+            width: calc(50% - 10px);
+            margin-bottom: 20px;
+            @media (max-width: 767px) {
+                width: 100%;
+            }
+        }
+        & .form-field-select,
+        & .form-field-textarea {
+            margin-bottom: 20px;
+            @media (max-width: 767px) {
+                margin-bottom: 0;
+            }
+        }
+        & .form-field-select {
+            @media (max-width: 767px) {
+                margin-bottom: 20px;
+            }
+        }
+        &-pad {
+            padding: 15px 17px;
+            background: #FBFBFB;
+            & h4 {
+                margin-bottom: 9px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 18px;
+                color: #000000;
+            }
+            & p {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 16px;
+                text-align: left;
+                color: rgba(28, 28, 28, 0.58);
+                &:not(:last-child) {
+                    margin-bottom: 9px;
+                }
+            }
+            & .form-checkbox {
+                &:not(:last-child) {
+                    margin-bottom: 13px;
+                }
+                & .form-checkbox-text {
+                    font-size: 12px;
+                    line-height: 16px;
+                }
+            }
+        }
+        &-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & .btn {
+                width: 100%;
+                max-width: 174px;
+            }
+        }
     }
 }
 
